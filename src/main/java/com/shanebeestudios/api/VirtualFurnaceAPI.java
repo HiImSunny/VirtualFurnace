@@ -171,14 +171,6 @@ public class VirtualFurnaceAPI {
         return furnaceManager;
     }
 
-    /*    *//**
-     * Get an instance of the tile manager
-     *
-     * @return Instance of the {@link TileManager}
-     *//*
-    public TileManager getTileManager() {
-        return tileManager;
-    }*/
 
     /**
      * Get an instance of the furnace tick class
@@ -199,7 +191,7 @@ public class VirtualFurnaceAPI {
     }
 
     /**
-     * Check whether or not the API is enabled
+     * Check whether the API is enabled
      *
      * @return True if enabled, false if failed to initialize
      */

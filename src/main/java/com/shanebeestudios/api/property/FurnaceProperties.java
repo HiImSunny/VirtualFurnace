@@ -29,13 +29,13 @@ public class FurnaceProperties extends Properties implements Keyed, Configuratio
      * <p>Cook speed = 2.0
      * <br>Fuel speed = 1.0</p>
      */
-    public static final FurnaceProperties BLAST_FURNACE = build("blast_furnace", 2.0, 1.0);
+    public static final FurnaceProperties BLAST_FURNACE = build("blast_furnace", 2.0, 2.0);
     /**
      * Pre-made property to mimic a vanilla Minecraft smoker
      * <p>Cook speed = 2.0
      * <br>Fuel speed = 1.0</p>
      */
-    public static final FurnaceProperties SMOKER = build("smoker", 2.0, 1.0);
+    public static final FurnaceProperties SMOKER = build("smoker", 2.0, 2.0);
 
     private static FurnaceProperties build(String key, double cookX, double fuelX) {
         return new FurnaceProperties("properties_" + key).cookMultiplier(cookX).fuelMultiplier(fuelX);
