@@ -33,7 +33,7 @@ public class FurnaceProperties extends Properties implements Keyed, Configuratio
     /**
      * Pre-made property to mimic a vanilla Minecraft smoker
      * <p>Cook speed = 2.0
-     * <br>Fuel speed = 1.0</p>
+     * <br>Fuel speed = 1.0</p>ex
      */
     public static final FurnaceProperties SMOKER = build("smoker", 2.0, 2.0);
 
