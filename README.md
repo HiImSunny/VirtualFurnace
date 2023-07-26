@@ -1,7 +1,8 @@
 # VirtualFurnace 
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/HiImSunny/VirtualFurnace/.github/workflows/maven.yml?branch=master)
+![Release Version](https://img.shields.io/github/v/release/HiImSunny/VirtualFurnace)
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/HiImSunny/VirtualFurnace)
-![GitHub](https://img.shields.io/github/license/HiImSunny/VirtualFurnace)
+![GitHub License](https://img.shields.io/github/license/HiImSunny/VirtualFurnace)
 
 A simple system for creating virtual furnaces. Unlike regular furnaces these furnaces are not linked to a block. 
 
