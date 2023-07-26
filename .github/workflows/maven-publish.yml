@@ -14,7 +14,7 @@ jobs:
         id: changelog
         uses: metcalfc/changelog-generator@v4.1.0
         with:
-          myToken: ${{ secrets.GITHUB_TOKEN }}
+          myToken: ${{ github.token }}
 
       - name: Set up JDK 17
         uses: actions/setup-java@v3
@@ -26,7 +26,7 @@ jobs:
       - name: Build with Maven
         run: mvn clean deploy
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
 
       - name: "Release"
         uses: softprops/action-gh-release@v1
