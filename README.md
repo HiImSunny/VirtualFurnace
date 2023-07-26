@@ -1,5 +1,5 @@
 # VirtualFurnace 
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/ShaneBeee/VirtualFurnace/Java%20CI%20with%20Maven)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/ShaneBeeStudios/VirtualFurnace/Java%20CI%20with%20Maven)
 ![GitHub All Releases](https://img.shields.io/github/downloads/ShaneBeee/VirtualFurnace/total)
 ![GitHub issues](https://img.shields.io/github/issues/ShaneBeee/VirtualFurnace)
 ![GitHub closed issues](https://img.shields.io/github/issues-closed/ShaneBeee/VirtualFurnace)
