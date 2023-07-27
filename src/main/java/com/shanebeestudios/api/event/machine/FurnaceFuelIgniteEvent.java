@@ -12,7 +12,7 @@ import org.jetbrains.annotations.NotNull;
  * Called when an ItemStack starts burning as a fuel in a {@link Furnace}
  */
 @SuppressWarnings("unused")
-public class FurnaceFuelBurnEvent extends Event implements Cancellable {
+public class FurnaceFuelIgniteEvent extends Event implements Cancellable {
 
     private static final HandlerList handlerList = new HandlerList();
 
@@ -22,7 +22,7 @@ public class FurnaceFuelBurnEvent extends Event implements Cancellable {
     private int burnTime;
     private boolean cancelled;
 
-    public FurnaceFuelBurnEvent(@NotNull Furnace furnace, @NotNull ItemStack fuelItem, @NotNull FurnaceFuel fuel, int burnTime) {
+    public FurnaceFuelIgniteEvent(@NotNull Furnace furnace, @NotNull ItemStack fuelItem, @NotNull FurnaceFuel fuel, int burnTime) {
         super(true);
         this.furnace = furnace;
         this.fuelItem = fuelItem;
