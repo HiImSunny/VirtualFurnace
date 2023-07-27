@@ -1,17 +1,12 @@
 package com.shanebeestudios.api;
 
 import com.shanebeestudios.api.machine.Furnace;
-import com.shanebeestudios.api.recipe.BrewingFuel;
-import com.shanebeestudios.api.recipe.BrewingRecipe;
-import com.shanebeestudios.api.recipe.FurnaceFuel;
-import com.shanebeestudios.api.recipe.FurnaceRecipe;
+import com.shanebeestudios.api.recipe.*;
 import com.shanebeestudios.api.util.Util;
-import org.bukkit.Material;
-import org.bukkit.NamespacedKey;
+import org.bukkit.*;
 import org.bukkit.inventory.ItemStack;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Recipe manager for {@link Furnace Furnaces}
@@ -19,6 +14,8 @@ import java.util.Map;
  */
 @SuppressWarnings({"UnusedReturnValue", "unused"})
 public class RecipeManager {
+
+    private final VirtualFurnaceAPI virtualFurnaceAPI = VirtualFurnaceAPI.getInstance();
 
     private final Map<NamespacedKey, FurnaceFuel> furnaceFuelMap;
     private final Map<NamespacedKey, BrewingFuel> brewingFuelMap;
@@ -89,7 +86,9 @@ public class RecipeManager {
         for (BrewingRecipe recipe : BrewingRecipe.getVanillaBrewingRecipes()) {
             registerBrewingRecipe(recipe);
         }
-        Util.log("Registered all furnace recipes.");
+
+        if (!virtualFurnaceAPI.isSilentStart())
+            Util.log("Registered all furnace recipes.");
     }
 
     /**
