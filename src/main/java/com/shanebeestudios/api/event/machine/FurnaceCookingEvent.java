@@ -1,5 +1,6 @@
 package com.shanebeestudios.api.event.machine;
 
+import com.shanebeestudios.api.event.Event;
 import com.shanebeestudios.api.machine.Furnace;
 import org.bukkit.event.*;
 import org.bukkit.inventory.ItemStack;
@@ -18,6 +19,7 @@ public class FurnaceCookingEvent extends Event implements Cancellable {
 
     public FurnaceCookingEvent(@NotNull Furnace furnace, @NotNull ItemStack source) {
         super(true);
+
         this.furnace = furnace;
         this.source = source;
         this.cancelled = false;

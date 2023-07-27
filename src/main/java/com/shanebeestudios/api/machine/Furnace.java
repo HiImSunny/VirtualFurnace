@@ -290,8 +290,10 @@ public class Furnace extends Machine implements PropertyHolder<FurnaceProperties
     private void igniteFuel() {
         FurnaceFuel fuel = this.recipeManager.getFuelByMaterial(this.fuel.getType());
         if (fuel == null) return;
+
         FurnaceFuelIgniteEvent event = new FurnaceFuelIgniteEvent(this, this.fuel, fuel, fuel.getBurnTime());
-        Bukkit.getPluginManager().callEvent(event);
+        event.callEvent();
+
         if (event.isCancelled()) {
             return;
         }
@@ -319,7 +321,7 @@ public class Furnace extends Machine implements PropertyHolder<FurnaceProperties
         fuelTime--;
 
         FurnaceFuelBurningEvent event = new FurnaceFuelBurningEvent(this, this.fuel, fuel, fuel.getBurnTime(), fuelTime);
-        Bukkit.getPluginManager().callEvent(event);
+        event.callEvent();
     }
 
     // Checks if the input is a valid ingredient of a FurnaceRecipe.
@@ -351,7 +353,8 @@ public class Furnace extends Machine implements PropertyHolder<FurnaceProperties
         this.experience += result.getExperience();
 
         FurnaceCookFinishEvent event = new FurnaceCookFinishEvent(this, this.input, out);
-        Bukkit.getPluginManager().callEvent(event);
+        event.callEvent();
+
         if (event.isCancelled()) {
             return;
         }
@@ -372,7 +375,7 @@ public class Furnace extends Machine implements PropertyHolder<FurnaceProperties
         cookTime++;
 
         FurnaceCookingEvent event = new FurnaceCookingEvent(this, input);
-        Bukkit.getPluginManager().callEvent(event);
+        event.callEvent();
     }
 
     @Override

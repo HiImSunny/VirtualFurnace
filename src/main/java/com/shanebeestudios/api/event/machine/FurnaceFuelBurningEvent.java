@@ -1,5 +1,6 @@
 package com.shanebeestudios.api.event.machine;
 
+import com.shanebeestudios.api.event.Event;
 import com.shanebeestudios.api.machine.Furnace;
 import com.shanebeestudios.api.recipe.FurnaceFuel;
 import org.bukkit.event.*;
@@ -7,7 +8,7 @@ import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
 /**
- * Called when an ItemStack is burning as a in a {@link Furnace}
+ * Called when an ItemStack is burning as fuel in a {@link Furnace}
  */
 public class FurnaceFuelBurningEvent extends Event implements Cancellable {
 

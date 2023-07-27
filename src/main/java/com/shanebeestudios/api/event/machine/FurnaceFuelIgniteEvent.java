@@ -1,5 +1,6 @@
 package com.shanebeestudios.api.event.machine;
 
+import com.shanebeestudios.api.event.Event;
 import com.shanebeestudios.api.machine.Furnace;
 import com.shanebeestudios.api.recipe.FurnaceFuel;
 import org.bukkit.event.*;
@@ -22,6 +23,7 @@ public class FurnaceFuelIgniteEvent extends Event implements Cancellable {
 
     public FurnaceFuelIgniteEvent(@NotNull Furnace furnace, @NotNull ItemStack fuelItem, @NotNull FurnaceFuel fuel, int burnTime) {
         super(true);
+
         this.furnace = furnace;
         this.fuelItem = fuelItem;
         this.fuel = fuel;

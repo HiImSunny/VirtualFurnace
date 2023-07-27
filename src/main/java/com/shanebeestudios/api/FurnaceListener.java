@@ -30,6 +30,7 @@ class FurnaceListener implements Listener {
         if (action != Action.RIGHT_CLICK_AIR && action != Action.RIGHT_CLICK_BLOCK) return;
 
         ItemStack hand = event.getItem();
+
         if (hand != null) {
             Furnace furnace = this.furnaceManager.getFurnaceFromItemStack(hand);
             if (furnace != null) {
@@ -38,6 +39,7 @@ class FurnaceListener implements Listener {
                 return;
             }
         }
+
         Block block = event.getClickedBlock();
         if (block == null) return;
 
@@ -59,8 +61,7 @@ class FurnaceListener implements Listener {
         Inventory inventory = event.getInventory();
         InventoryHolder holder = inventory.getHolder();
         HumanEntity clicker = event.getWhoClicked();
-        if (holder instanceof Furnace && clicker instanceof Player) {
-            Furnace furnace = ((Furnace) holder);
+        if (holder instanceof Furnace furnace && clicker instanceof Player) {
             int slot = event.getRawSlot();
             // Give XP to player when they extract from the furnace
             if (slot == 2) {
@@ -116,7 +117,7 @@ class FurnaceListener implements Listener {
             ItemStack cursor = c.getType() != Material.AIR ? c.clone() : null;
             int slot = event.getRawSlot();
             if (slot >= 0 && slot <= 4) {
-                // If shift-clicking we dont want to cancel since this will
+                // If shift-clicking we don't want to cancel since this will
                 // just be removing items from the inventory not placing in
                 if (event.isShiftClick()) {
                     return;

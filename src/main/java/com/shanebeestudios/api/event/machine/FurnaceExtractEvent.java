@@ -21,6 +21,8 @@ public class FurnaceExtractEvent extends Event {
     private int experience;
 
     public FurnaceExtractEvent(@NotNull Furnace furnace, @NotNull Player player, @NotNull ItemStack itemStack, int experience) {
+        super(false);
+
         this.furnace = furnace;
         this.player = player;
         this.itemStack = itemStack;
