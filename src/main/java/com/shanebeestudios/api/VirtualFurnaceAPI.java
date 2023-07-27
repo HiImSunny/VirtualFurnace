@@ -36,11 +36,18 @@ public class VirtualFurnaceAPI {
     private final JavaPlugin plugin;
     private boolean enabled = true;
     private boolean silentStart = false;
+    private boolean clearDataFileOnDisable = false;
     private RecipeManager recipeManager;
     private FurnaceManager furnaceManager;
     private BrewingManager brewingManager;
     // private TileManager tileManager;
     private FurnaceTick furnaceTick;
+
+    public VirtualFurnaceAPI(@NotNull JavaPlugin javaPlugin, boolean silentStart, boolean disableMetrics, boolean clearDataFileOnDisable) {
+        this(javaPlugin, silentStart, disableMetrics);
+
+        this.clearDataFileOnDisable = clearDataFileOnDisable;
+    }
 
     /**
      * Create a new instance of the VirtualFurnaceAPI
@@ -112,6 +119,10 @@ public class VirtualFurnaceAPI {
         return silentStart;
     }
 
+    public boolean isClearDataFileOnDisable() {
+        return clearDataFileOnDisable;
+    }
+
     public BrewingManager getBrewingManager() {
         return brewingManager;
     }
@@ -129,10 +140,17 @@ public class VirtualFurnaceAPI {
         this.furnaceManager.shutdown();
         this.brewingManager.shutdown();
         // this.tileManager.shutdown();
+
+        if (clearDataFileOnDisable) {
+            this.furnaceManager.clearFurnaceFile();
+            this.brewingManager.clearBrewingFile();
+        }
+
         this.furnaceManager = null;
         this.brewingManager = null;
         //this.tileManager = null;
         this.recipeManager = null;
+
         Util.log("Shut down API!");
     }
 

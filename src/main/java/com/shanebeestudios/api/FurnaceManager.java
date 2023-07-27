@@ -269,6 +269,11 @@ public class FurnaceManager {
         loadFurnaces();
     }
 
+
+    public void clearFurnaceFile() {
+        furnaceFile.delete();
+    }
+
     void loadFurnaces() {
         ConfigurationSection section = this.furnaceConfig.getConfigurationSection("furnaces");
         if (section != null) {

@@ -54,6 +54,10 @@ public class BrewingManager {
         loadBrewingStands();
     }
 
+    public void clearBrewingFile() {
+        brewingFile.delete();
+    }
+
     void loadBrewingStands() {
         ConfigurationSection section = this.brewingConfig.getConfigurationSection("brewing");
         if (section != null) {
