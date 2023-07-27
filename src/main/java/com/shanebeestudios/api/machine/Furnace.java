@@ -13,10 +13,7 @@ import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.*;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Objects;
-import java.util.UUID;
+import java.util.*;
 
 /**
  * Virtual furnace object
@@ -251,10 +248,10 @@ public class Furnace extends Machine implements PropertyHolder<FurnaceProperties
         // Cook time is the arrow in the Furnace UI
 
         if (this.fuelTime > 0) { // If fuel still there
-            this.fuelTime--; // decrease fuel
+            burningTheFuel(); // decrease fuel
 
             if (canCook()) { // If can cook
-                this.cookTime++; // increase cook time
+                cooking(); // increase cook time
 
                 if (this.cookTime >= this.cookTimeTotal) { // If cook time more than or equal to total cook time
                     this.cookTime = 0; // set cook time to 0
@@ -314,6 +311,17 @@ public class Furnace extends Machine implements PropertyHolder<FurnaceProperties
         updateInventory();
     }
 
+    // Burning the fuel of the furnace ().
+    private void burningTheFuel() {
+        FurnaceFuel fuel = this.recipeManager.getFuelByMaterial(this.fuel.getType());
+        if (fuel == null) return;
+
+        fuelTime--;
+
+        FurnaceFuelBurningEvent event = new FurnaceFuelBurningEvent(this, this.fuel, fuel, fuel.getBurnTime(), fuelTime);
+        Bukkit.getPluginManager().callEvent(event);
+    }
+
     // Checks if the input is a valid ingredient of a FurnaceRecipe.
     private boolean canCook() {
         if (this.input == null) return false;
@@ -355,6 +363,16 @@ public class Furnace extends Machine implements PropertyHolder<FurnaceProperties
             this.input = null;
         }
         updateInventory();
+    }
+
+    private void cooking() {
+        FurnaceRecipe result = this.recipeManager.getByIngredient(this.input.getType());
+        if (result == null) return;
+
+        cookTime++;
+
+        FurnaceCookingEvent event = new FurnaceCookingEvent(this, input);
+        Bukkit.getPluginManager().callEvent(event);
     }
 
     @Override
