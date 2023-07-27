@@ -11,7 +11,7 @@ import org.jetbrains.annotations.NotNull;
  * Called when an ItemStack is successfully cooked in a {@link Furnace}
  */
 @SuppressWarnings("unused")
-public class FurnaceCookEvent extends Event implements Cancellable {
+public class FurnaceCookFinishEvent extends Event implements Cancellable {
 
     private static final HandlerList handlerList = new HandlerList();
 
@@ -20,7 +20,7 @@ public class FurnaceCookEvent extends Event implements Cancellable {
     private ItemStack result;
     private boolean cancelled;
 
-    public FurnaceCookEvent(@NotNull Furnace furnace, @NotNull ItemStack source, @NotNull ItemStack result) {
+    public FurnaceCookFinishEvent(@NotNull Furnace furnace, @NotNull ItemStack source, @NotNull ItemStack result) {
         super(true);
         this.furnace = furnace;
         this.source = source;

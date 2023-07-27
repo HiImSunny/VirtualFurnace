@@ -3,8 +3,8 @@ package com.shanebeestudios.api.machine;
 import com.shanebeestudios.api.FurnaceManager;
 import com.shanebeestudios.api.RecipeManager;
 import com.shanebeestudios.api.VirtualFurnaceAPI;
-import com.shanebeestudios.api.event.machine.FurnaceCookEvent;
-import com.shanebeestudios.api.event.machine.FurnaceFuelBurnEvent;
+import com.shanebeestudios.api.event.machine.FurnaceCookFinishEvent;
+import com.shanebeestudios.api.event.machine.FurnaceFuelIgniteEvent;
 import com.shanebeestudios.api.property.FurnaceProperties;
 import com.shanebeestudios.api.property.PropertyHolder;
 import com.shanebeestudios.api.recipe.FurnaceFuel;
@@ -289,7 +289,7 @@ public class Furnace extends Machine implements PropertyHolder<FurnaceProperties
     private void processBurn() {
         FurnaceFuel fuel = this.recipeManager.getFuelByMaterial(this.fuel.getType());
         if (fuel == null) return;
-        FurnaceFuelBurnEvent event = new FurnaceFuelBurnEvent(this, this.fuel, fuel, fuel.getBurnTime());
+        FurnaceFuelIgniteEvent event = new FurnaceFuelIgniteEvent(this, this.fuel, fuel, fuel.getBurnTime());
         Bukkit.getPluginManager().callEvent(event);
         if (event.isCancelled()) {
             return;
@@ -338,7 +338,7 @@ public class Furnace extends Machine implements PropertyHolder<FurnaceProperties
         }
         this.experience += result.getExperience();
 
-        FurnaceCookEvent event = new FurnaceCookEvent(this, this.input, out);
+        FurnaceCookFinishEvent event = new FurnaceCookFinishEvent(this, this.input, out);
         Bukkit.getPluginManager().callEvent(event);
         if (event.isCancelled()) {
             return;
