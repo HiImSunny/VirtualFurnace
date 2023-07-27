@@ -315,12 +315,9 @@ public class Furnace extends Machine implements PropertyHolder<FurnaceProperties
 
     // Burning the fuel of the furnace.
     private void burningTheFuel() {
-        FurnaceFuel fuel = this.recipeManager.getFuelByMaterial(this.fuel.getType());
-        if (fuel == null) return;
-
         fuelTime--;
 
-        FurnaceFuelBurningEvent event = new FurnaceFuelBurningEvent(this, this.fuel, fuel, fuel.getBurnTime(), fuelTime);
+        FurnaceFuelBurningEvent event = new FurnaceFuelBurningEvent(this, fuelTime);
         event.callEvent();
     }
 
