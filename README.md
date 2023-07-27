@@ -1,6 +1,6 @@
 # VirtualFurnace 
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/HiImSunny/VirtualFurnace/.github/workflows/maven.yml?branch=master)
-![Release Version](https://img.shields.io/github/v/release/HiImSunny/VirtualFurnace)
+![GitHub release](https://img.shields.io/github/v/release/HiImSunny/VirtualFurnace)
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/HiImSunny/VirtualFurnace)
 ![GitHub License](https://img.shields.io/github/license/HiImSunny/VirtualFurnace)
 
