@@ -1,22 +1,16 @@
 package com.shanebeestudios.api;
 
 import com.shanebeestudios.api.event.machine.FurnaceExtractEvent;
-import com.shanebeestudios.api.machine.BrewingStand;
-import com.shanebeestudios.api.machine.Furnace;
+import com.shanebeestudios.api.machine.*;
 import com.shanebeestudios.api.recipe.FurnaceFuel;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
-import org.bukkit.entity.HumanEntity;
-import org.bukkit.entity.Player;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.Listener;
+import org.bukkit.entity.*;
+import org.bukkit.event.*;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
-import org.bukkit.inventory.Inventory;
-import org.bukkit.inventory.InventoryHolder;
-import org.bukkit.inventory.InventoryView;
-import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.*;
 
 class FurnaceListener implements Listener {
 

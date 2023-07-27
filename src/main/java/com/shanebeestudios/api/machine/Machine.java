@@ -3,8 +3,7 @@ package com.shanebeestudios.api.machine;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Objects;
-import java.util.UUID;
+import java.util.*;
 
 /**
  * Abstract machine class

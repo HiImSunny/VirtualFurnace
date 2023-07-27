@@ -2,15 +2,10 @@ package com.shanebeestudios.api.recipe;
 
 import com.shanebeestudios.api.machine.Furnace;
 import com.shanebeestudios.api.util.Util;
-import org.bukkit.Bukkit;
-import org.bukkit.Material;
-import org.bukkit.NamespacedKey;
-import org.bukkit.inventory.BlastingRecipe;
-import org.bukkit.inventory.SmokingRecipe;
+import org.bukkit.*;
+import org.bukkit.inventory.*;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 /**
  * Recipes for {@link Furnace Furnaces}

@@ -1,11 +1,9 @@
 package com.shanebeestudios.api.property;
 
-import org.bukkit.Keyed;
-import org.bukkit.NamespacedKey;
+import org.bukkit.*;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Base property class

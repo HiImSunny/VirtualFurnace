@@ -3,8 +3,7 @@ package com.shanebeestudios.api.task;
 import com.shanebeestudios.api.VirtualFurnaceAPI;
 import com.shanebeestudios.api.util.Util;
 import org.bukkit.Bukkit;
-import org.bukkit.scheduler.BukkitRunnable;
-import org.bukkit.scheduler.BukkitTask;
+import org.bukkit.scheduler.*;
 
 public class TileTick extends BukkitRunnable {
 

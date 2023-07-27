@@ -1,17 +1,13 @@
 package com.shanebeestudios.api.recipe;
 
 import com.shanebeestudios.api.util.Util;
-import org.bukkit.Material;
-import org.bukkit.NamespacedKey;
+import org.bukkit.*;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.PotionMeta;
-import org.bukkit.potion.PotionData;
-import org.bukkit.potion.PotionType;
+import org.bukkit.potion.*;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public class BrewingRecipe extends Recipe {
 

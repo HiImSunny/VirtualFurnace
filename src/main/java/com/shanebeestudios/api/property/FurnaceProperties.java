@@ -2,14 +2,11 @@ package com.shanebeestudios.api.property;
 
 import com.shanebeestudios.api.machine.Furnace;
 import com.shanebeestudios.api.util.Util;
-import org.bukkit.Keyed;
-import org.bukkit.NamespacedKey;
+import org.bukkit.*;
 import org.bukkit.configuration.serialization.ConfigurationSerializable;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 
 /**
  * Properties for {@link Furnace Furnaces}

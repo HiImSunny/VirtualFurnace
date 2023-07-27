@@ -1,26 +1,16 @@
 package com.shanebeestudios.api.machine;
 
-import com.shanebeestudios.api.RecipeManager;
-import com.shanebeestudios.api.VirtualFurnaceAPI;
-import com.shanebeestudios.api.property.BrewingProperties;
-import com.shanebeestudios.api.property.PropertyHolder;
-import com.shanebeestudios.api.recipe.BrewingFuel;
-import com.shanebeestudios.api.recipe.BrewingRecipe;
-import org.bukkit.Bukkit;
-import org.bukkit.Sound;
+import com.shanebeestudios.api.*;
+import com.shanebeestudios.api.property.*;
+import com.shanebeestudios.api.recipe.*;
+import org.bukkit.*;
 import org.bukkit.configuration.serialization.ConfigurationSerializable;
-import org.bukkit.entity.HumanEntity;
-import org.bukkit.entity.Player;
+import org.bukkit.entity.*;
 import org.bukkit.event.inventory.InventoryType;
-import org.bukkit.inventory.Inventory;
-import org.bukkit.inventory.InventoryHolder;
-import org.bukkit.inventory.InventoryView;
-import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.*;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 
 public class BrewingStand extends Machine implements PropertyHolder<BrewingProperties>, InventoryHolder, ConfigurationSerializable {
 

@@ -1,16 +1,11 @@
 package com.shanebeestudios.api.recipe;
 
 import com.shanebeestudios.api.util.Util;
-import org.bukkit.Material;
-import org.bukkit.NamespacedKey;
-import org.bukkit.Tag;
+import org.bukkit.*;
 import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 /**
  * Fuel for furnace

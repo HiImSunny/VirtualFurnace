@@ -1,13 +1,9 @@
 package com.shanebeestudios.api.task;
 
-import com.shanebeestudios.api.BrewingManager;
-import com.shanebeestudios.api.FurnaceManager;
-import com.shanebeestudios.api.VirtualFurnaceAPI;
-import com.shanebeestudios.api.machine.BrewingStand;
-import com.shanebeestudios.api.machine.Furnace;
+import com.shanebeestudios.api.*;
+import com.shanebeestudios.api.machine.*;
 import org.bukkit.Bukkit;
-import org.bukkit.scheduler.BukkitRunnable;
-import org.bukkit.scheduler.BukkitTask;
+import org.bukkit.scheduler.*;
 
 /**
  * Timer for ticking furnaces

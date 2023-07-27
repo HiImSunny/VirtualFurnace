@@ -1,9 +1,7 @@
 package com.shanebeestudios.api.util;
 
 import com.shanebeestudios.api.VirtualFurnaceAPI;
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
-import org.bukkit.NamespacedKey;
+import org.bukkit.*;
 import org.bukkit.command.CommandSender;
 
 public class Util {

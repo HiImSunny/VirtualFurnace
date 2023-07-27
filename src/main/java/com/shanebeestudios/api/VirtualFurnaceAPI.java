@@ -1,11 +1,9 @@
 package com.shanebeestudios.api;
 
-import com.shanebeestudios.api.machine.BrewingStand;
-import com.shanebeestudios.api.machine.Furnace;
-import com.shanebeestudios.api.property.BrewingProperties;
-import com.shanebeestudios.api.property.FurnaceProperties;
-import com.shanebeestudios.api.tile.FurnaceTile;
+import com.shanebeestudios.api.machine.*;
+import com.shanebeestudios.api.property.*;
 import com.shanebeestudios.api.task.FurnaceTick;
+import com.shanebeestudios.api.tile.FurnaceTile;
 import com.shanebeestudios.api.util.Util;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.serialization.ConfigurationSerialization;

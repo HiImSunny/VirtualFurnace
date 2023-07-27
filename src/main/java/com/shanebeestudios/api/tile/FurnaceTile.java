@@ -2,8 +2,7 @@ package com.shanebeestudios.api.tile;
 
 import com.shanebeestudios.api.VirtualFurnaceAPI;
 import com.shanebeestudios.api.machine.Furnace;
-import org.bukkit.Location;
-import org.bukkit.World;
+import org.bukkit.*;
 import org.bukkit.block.Block;
 import org.bukkit.configuration.serialization.ConfigurationSerializable;
 import org.bukkit.entity.ExperienceOrb;
@@ -12,8 +11,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Represents a {@link Tile} that connects a tickable {@link Furnace} to a {@link Block}

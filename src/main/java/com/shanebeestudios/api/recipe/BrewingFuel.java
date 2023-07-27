@@ -1,9 +1,7 @@
 package com.shanebeestudios.api.recipe;
 
 import com.shanebeestudios.api.util.Util;
-import org.bukkit.Material;
-import org.bukkit.NamespacedKey;
-import org.bukkit.Tag;
+import org.bukkit.*;
 import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
 

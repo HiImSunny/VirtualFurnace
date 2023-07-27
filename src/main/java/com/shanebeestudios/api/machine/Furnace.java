@@ -1,25 +1,16 @@
 package com.shanebeestudios.api.machine;
 
-import com.shanebeestudios.api.FurnaceManager;
-import com.shanebeestudios.api.RecipeManager;
-import com.shanebeestudios.api.VirtualFurnaceAPI;
-import com.shanebeestudios.api.event.machine.FurnaceCookFinishEvent;
-import com.shanebeestudios.api.event.machine.FurnaceFuelIgniteEvent;
-import com.shanebeestudios.api.property.FurnaceProperties;
-import com.shanebeestudios.api.property.PropertyHolder;
-import com.shanebeestudios.api.recipe.FurnaceFuel;
+import com.shanebeestudios.api.*;
+import com.shanebeestudios.api.event.machine.*;
+import com.shanebeestudios.api.property.*;
 import com.shanebeestudios.api.recipe.FurnaceRecipe;
+import com.shanebeestudios.api.recipe.*;
 import com.shanebeestudios.api.util.Util;
-import org.bukkit.Bukkit;
-import org.bukkit.Material;
+import org.bukkit.*;
 import org.bukkit.configuration.serialization.ConfigurationSerializable;
-import org.bukkit.entity.HumanEntity;
-import org.bukkit.entity.Player;
+import org.bukkit.entity.*;
 import org.bukkit.event.inventory.InventoryType;
-import org.bukkit.inventory.Inventory;
-import org.bukkit.inventory.InventoryHolder;
-import org.bukkit.inventory.InventoryView;
-import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.*;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.LinkedHashMap;
