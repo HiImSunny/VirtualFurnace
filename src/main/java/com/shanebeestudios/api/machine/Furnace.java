@@ -256,26 +256,39 @@ public class Furnace extends Machine implements PropertyHolder<FurnaceProperties
      */
     @Override
     public void tick() {
-        if (this.fuelTime > 0) {
-            this.fuelTime--;
-            if (canCook()) {
-                this.cookTime++;
-                if (this.cookTime >= this.cookTimeTotal) {
-                    this.cookTime = 0;
-                    processCook();
+        // The fuel is the fire in the middle, not the ItemStack
+        // Cook time is the arrow in the Furnace UI
+
+        if (this.fuelTime > 0) { // If fuel still there
+            this.fuelTime--; // decrease fuel
+
+            if (canCook()) { // If can cook
+                this.cookTime++; // increase cook time
+
+                if (this.cookTime >= this.cookTimeTotal) { // If cook time more than or equal to total cook time
+                    this.cookTime = 0; // set cook time to 0
+
+                    finishCook(); // finish cook
                 }
-            } else {
-                this.cookTime = 0;
-            }
-        } else if (canBurn() && canCook()) {
-            processBurn();
-        } else if (this.cookTime > 0) {
-            if (canCook()) {
-                this.cookTime -= 5;
-            } else {
-                this.cookTime = 0;
-            }
-        }
+
+            } else // cannot cook
+                this.cookTime = 0; // set cook time to 0
+
+        } else // fuel empty
+            if (canBurn() && canCook()) { // check can burn fuel and can cook
+
+                igniteFuel(); // start burn fuel and cooking
+
+            } else // the condition here is fuel empty and can't burn fuel (or cook)
+                if (this.cookTime > 0) { // If Furnace is cooking
+
+                    if (canCook()) // If ItemStack in cook slot is available (obviously can cook it)
+                        this.cookTime -= 5; // decrease cook time because there is no fuel
+                    else // or cannot cook it
+                        this.cookTime = 0; // set the cook time to 0
+
+                }
+
         updateInventoryView();
     }
 
@@ -285,8 +298,8 @@ public class Furnace extends Machine implements PropertyHolder<FurnaceProperties
         return this.recipeManager.getFuelByMaterial(this.fuel.getType()) != null;
     }
 
-    // Process the burning process of the furnace.
-    private void processBurn() {
+    // Ignite the fuel of the furnace.
+    private void igniteFuel() {
         FurnaceFuel fuel = this.recipeManager.getFuelByMaterial(this.fuel.getType());
         if (fuel == null) return;
         FurnaceFuelIgniteEvent event = new FurnaceFuelIgniteEvent(this, this.fuel, fuel, fuel.getBurnTime());
@@ -325,8 +338,8 @@ public class Furnace extends Machine implements PropertyHolder<FurnaceProperties
         return false;
     }
 
-    // Processes a furnace cook.
-    private void processCook() {
+    // Finish the cook.
+    private void finishCook() {
         FurnaceRecipe result = this.recipeManager.getByIngredient(this.input.getType());
         if (result == null) return;
         ItemStack out;
