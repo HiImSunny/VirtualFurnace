@@ -313,7 +313,7 @@ public class Furnace extends Machine implements PropertyHolder<FurnaceProperties
         updateInventory();
     }
 
-    // Burning the fuel of the furnace ().
+    // Burning the fuel of the furnace.
     private void burningTheFuel() {
         FurnaceFuel fuel = this.recipeManager.getFuelByMaterial(this.fuel.getType());
         if (fuel == null) return;

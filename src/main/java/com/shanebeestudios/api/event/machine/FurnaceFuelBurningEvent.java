@@ -5,7 +5,7 @@ import com.shanebeestudios.api.machine.Furnace;
 import com.shanebeestudios.api.recipe.FurnaceFuel;
 import org.bukkit.event.*;
 import org.bukkit.inventory.ItemStack;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.*;
 
 /**
  * Called when an ItemStack is burning as fuel in a {@link Furnace}
@@ -15,13 +15,14 @@ public class FurnaceFuelBurningEvent extends Event implements Cancellable {
     private static final HandlerList handlerList = new HandlerList();
 
     private final Furnace furnace;
+    @Nullable
     private final ItemStack fuelItem;
     private final FurnaceFuel fuel;
     private int burnTime;
     private final int currentFuelTime;
     private boolean cancelled;
 
-    public FurnaceFuelBurningEvent(@NotNull Furnace furnace, @NotNull ItemStack fuelItem, @NotNull FurnaceFuel fuel, int burnTime, int currentFuelTime) {
+    public FurnaceFuelBurningEvent(@NotNull Furnace furnace, @Nullable ItemStack fuelItem, @NotNull FurnaceFuel fuel, int burnTime, int currentFuelTime) {
         super(true);
         this.furnace = furnace;
         this.fuelItem = fuelItem;
@@ -45,6 +46,7 @@ public class FurnaceFuelBurningEvent extends Event implements Cancellable {
      *
      * @return ItemStack that will burn in this even
      */
+    @Nullable
     public ItemStack getFuelItem() {
         return fuelItem;
     }
