@@ -2,8 +2,6 @@ version: 2
 updates:
   - package-ecosystem: maven
     directory: "/"
-    registries:
-      - maven-artifactory
     schedule:
       interval: daily
       time: "22:00"
