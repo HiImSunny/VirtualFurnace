@@ -130,7 +130,7 @@ public class VirtualFurnaceAPI {
      * <p>Stops ticking, saves all furnaces and tiles to file.
      * This should be used in a plugin's {@link Plugin#onDisable() onDisable()} method</p>
      */
-    public void disableAPI() {
+    public void disableAPI(boolean silentStop) {
         this.furnaceTick.cancel();
         //this.tileTick.cancel();
         this.furnaceTick = null;
@@ -149,7 +149,8 @@ public class VirtualFurnaceAPI {
         //this.tileManager = null;
         this.recipeManager = null;
 
-        Util.log("Shut down API!");
+        if (!silentStop)
+            Util.log("Shut down API!");
     }
 
     /**
